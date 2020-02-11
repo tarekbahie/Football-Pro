@@ -12,24 +12,21 @@ class CalendarCell: UICollectionViewCell {
         let tName = UILabel()
         tName.translatesAutoresizingMaskIntoConstraints = false
         tName.font = UIFont.systemFont(ofSize: 9)
-        
-        tName.textAlignment = .center
+        tName.setupGrayColor()
         return tName
     }()
     let dayNumber : UILabel = {
         let tName = UILabel()
         tName.translatesAutoresizingMaskIntoConstraints = false
         tName.font = UIFont.systemFont(ofSize: 12)
-        
-        tName.textAlignment = .center
+        tName.setupGrayColor()
         return tName
     }()
     let monthName : UILabel = {
         let tName = UILabel()
         tName.translatesAutoresizingMaskIntoConstraints = false
         tName.font = UIFont.systemFont(ofSize: 12)
-        
-        tName.textAlignment = .center
+        tName.setupGrayColor()
         return tName
     }()
     override init(frame: CGRect) {
@@ -41,35 +38,30 @@ class CalendarCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func setupViews() {
-        addSubview(dayName)
-        addSubview(dayNumber)
-        addSubview(monthName)
-        
-        monthName.topAnchor.constraint(equalTo: topAnchor,constant : 5).isActive = true
-        monthName.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        monthName.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        monthName.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
-        
-        dayName.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        dayName.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        dayName.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        dayName.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-        dayNumber.centerXAnchor.constraint(equalTo: dayName.centerXAnchor).isActive = true
-        dayNumber.centerYAnchor.constraint(equalTo: dayName.centerYAnchor, constant : 25).isActive = true
-        dayNumber.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        dayNumber.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        let stack = UIStackView(arrangedSubviews: [monthName,dayName,dayNumber])
+        stack.distribution = .equalSpacing
+        stack.axis = .vertical
+        stack.spacing = 1.0
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stack)
+        stack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 5).isActive = true
+        stack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor,constant: 5).isActive = true
+        stack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,constant: -5).isActive = true
+        stack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -5).isActive = true
         
     }
     override var isSelected: Bool {
         didSet {
-            dayNumber.textColor =  isSelected ? #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1) : #colorLiteral(red: 0.1607843137, green: 0.1450980392, blue: 0.1725490196, alpha: 1)
+            monthName.textColor =  isSelected ? monthName.setupSelectedColor() : monthName.setupUnselectedColor()
+            dayName.textColor =  isSelected ? dayName.setupSelectedColor() : dayName.setupUnselectedColor()
+            dayNumber.textColor =  isSelected ? dayNumber.setupSelectedColor() : dayNumber.setupUnselectedColor()
         }
     }
     override var isHighlighted: Bool {
         didSet {
-            dayNumber.textColor = isHighlighted ? #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1) : #colorLiteral(red: 0.1607843137, green: 0.1450980392, blue: 0.1725490196, alpha: 1)
+            monthName.textColor =  isSelected ? monthName.setupSelectedColor() : monthName.setupUnselectedColor()
+            dayName.textColor =  isSelected ? dayName.setupSelectedColor() : dayName.setupUnselectedColor()
+            dayNumber.textColor =  isSelected ? dayNumber.setupSelectedColor() : dayNumber.setupUnselectedColor()
         }
     }
 }

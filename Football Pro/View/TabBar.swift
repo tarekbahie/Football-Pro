@@ -16,20 +16,30 @@ class TabBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSou
         cView.translatesAutoresizingMaskIntoConstraints = false
         cView.delegate = self
         cView.dataSource = self
-        cView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cView.setupBgColor()
         cView.isScrollEnabled = false
         return cView
     }()
-    let names = ["home","live","all","club"]
-    var home : HomeVC?
+    var names : [String]?{
+        didSet{
+            collectionView.reloadData()
+            let selectedIndex = IndexPath(item: 0, section: 0)
+            collectionView.selectItem(at: selectedIndex, animated: false, scrollPosition: .top)
+        }
+    }
+    weak var home : HomeVC?
+    weak var mDetails : MatchDetailsVC?
+    var size : CGFloat?
+    var imageHeight:CGFloat?
     
-    var calBar : CalendarBar?
+    weak var calBar : CalendarBar?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        let selectedIndex = IndexPath(item: 0, section: 0)
-        collectionView.selectItem(at: selectedIndex, animated: false, scrollPosition: .top)
+        
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,20 +55,27 @@ class TabBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return names?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tabId", for: indexPath) as! TabCell
-        cell.tabImage.image = UIImage(named: names[indexPath.item])?.withRenderingMode(.alwaysTemplate)
-        cell.tabName.text = names[indexPath.item]
+        cell.configureCell(imgName: names?[indexPath.item] ?? "", title: names?[indexPath.item] ?? "", size: imageHeight ?? 0, size2: size ?? 20 - 20)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / 5, height: 50)
+        guard let h = size, let d = names?.count else{
+            return CGSize(width: frame.width / 5, height: 50)
+            
+        }
+        return CGSize(width: frame.width / (CGFloat(d) + 1), height: h - 20)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        home?.tabName = names[indexPath.item]
+        if let h = home{
+            h.tabName = names?[indexPath.item]
+        }else if let mD = mDetails{
+            mD.tabName = names?[indexPath.item]
+        }
     }
     
     

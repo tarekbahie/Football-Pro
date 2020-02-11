@@ -17,33 +17,26 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
         cView.translatesAutoresizingMaskIntoConstraints = false
         cView.delegate = self
         cView.dataSource = self
-        cView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        cView.setupBgColor()
         cView.isScrollEnabled = true
         return cView
     }()
-    
     let today = Date()
-    
     var dayNumber = [String]()
     var dayNames = [String]()
     var month=[String]()
-    
     var monthArr = [[String]]()
     var dayNumArr = [[String]]()
     var dayNameArr = [[String]]()
-    
-    var home : HomeVC?
+    weak var home : HomeVC?
     var tMonth = ""
     var tDay = ""
-    
     var month1 = [String]()
     var dayname1 = [String]()
     var daynum1 = [String]()
-    
     var month2 = [String]()
     var dayname2 = [String]()
     var daynum2 = [String]()
-    
     var month3 = [String]()
     var dayname3 = [String]()
     var daynum3 = [String]()
@@ -53,6 +46,8 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
         setupViews()
         getDatesBeforeToday()
         getComingDates()
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -120,8 +115,10 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
         default:
             monthInNumber = "1"
         }
-        return "2019-\(monthInNumber)-\(day)"
-        
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        return "\(year)-\(monthInNumber)-\(day)"
     }
     func getDatesBeforeToday(){
         var (months,daysNum,daysNam) = formMonthDaysNumDaysNamArrays(today: today, numberOfDays: 12, plusOrMinus: "-")
@@ -174,7 +171,6 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
         }
         return (months,daysNum,daysNam)
     }
-    
     func sortMonthsAndDays(){
         let (todayM,todayD) = getTodayDate()
         self.tMonth = todayM
@@ -240,8 +236,6 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
                 return
             }
         }
-        
-        
     }
     func scrollToItemAndSection(i : Int, s: Int){
         let endIndex = IndexPath(item: i, section: s)
@@ -250,7 +244,6 @@ class CalendarBar : UIView,UICollectionViewDelegateFlowLayout,UICollectionViewDa
             self.collectionView.scrollToItem(at: endIndex, at: .centeredHorizontally, animated: false)
         }
     }
-    
     func getTodayDate()->(String,String){
         let d = Calendar.current.date(byAdding: .day, value: 0, to: today)!
         let mFormatter = DateFormatter()

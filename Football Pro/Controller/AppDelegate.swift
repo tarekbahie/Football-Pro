@@ -8,19 +8,33 @@
 
 import UIKit
 import CoreData
+//import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()
         let homeVC = HomeVC()
         window?.rootViewController = UINavigationController(rootViewController: homeVC)
+        let navigationBarAppearance = UINavigationBar.appearance()
+        if #available(iOS 13.0, *) {
+            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.systemIndigo]
+            navigationBarAppearance.titleTextAttributes = textAttributes
+            navigationBarAppearance.tintColor = UIColor.systemIndigo
+        } else {
+            let textAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0.03137254902, green: 0.2549019608, blue: 0.3607843137, alpha: 1)]
+            navigationBarAppearance.titleTextAttributes = textAttributes
+            navigationBarAppearance.tintColor = #colorLiteral(red: 0.03137254902, green: 0.2549019608, blue: 0.3607843137, alpha: 1)
+        }
+        navigationBarAppearance.isTranslucent = false
+        
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 
@@ -45,6 +59,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         self.saveContext()
+        DataService.instance.timer?.invalidate()
+        DataService.instance.timer = nil
     }
     lazy var persistentContainer: NSPersistentContainer = {
         /*
@@ -73,4 +89,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
+
 

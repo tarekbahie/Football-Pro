@@ -20,12 +20,20 @@
 		471D67B1229EC0AC006CA528 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D67B0229EC0AC006CA528 /* DataService.swift */; };
 		471D67B3229ED278006CA528 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471D67B2229ED278006CA528 /* Match.swift */; };
 		471D67B9229ED37F006CA528 /* Competition.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 471D67B7229ED37F006CA528 /* Competition.xcdatamodeld */; };
+		4743D563236DBADB00EB1F2B /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743D562236DBADB00EB1F2B /* MatchDetailsVC.swift */; };
+		4743D565236DC31C00EB1F2B /* FormationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4743D564236DC31C00EB1F2B /* FormationCell.swift */; };
+		474649F42374BDBD005457BF /* StatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474649F32374BDBD005457BF /* StatsCell.swift */; };
+		474649F62374BDD8005457BF /* EventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474649F52374BDD8005457BF /* EventsCell.swift */; };
+		474649F82374C364005457BF /* TeamEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474649F72374C364005457BF /* TeamEventsCell.swift */; };
+		4754D7BA2337EC32004E9B56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754D7B92337EC32004E9B56 /* Extensions.swift */; };
 		4764B64622A299A100F35F74 /* TeamDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764B64522A299A100F35F74 /* TeamDetailVC.swift */; };
 		4764B64822A2B31300F35F74 /* ScorerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764B64722A2B31200F35F74 /* ScorerCell.swift */; };
 		4764B64A22A2BB2300F35F74 /* SquadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764B64922A2BB2300F35F74 /* SquadVC.swift */; };
 		4764B64C22A2BDF800F35F74 /* SquadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764B64B22A2BDF800F35F74 /* SquadCell.swift */; };
 		4764B64E22A2C62A00F35F74 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4764B64D22A2C62A00F35F74 /* PlayerVC.swift */; };
 		478419DD229F28D2000FE84C /* LiveMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478419DC229F28D2000FE84C /* LiveMatchCell.swift */; };
+		47ADD57D23774B6400B597A3 /* FormationPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADD57C23774B6400B597A3 /* FormationPlayerCell.swift */; };
+		47ADD57F23774C9E00B597A3 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ADD57E23774C9E00B597A3 /* HeaderCell.swift */; };
 		47BB529A229FFCB600BEF574 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB5299229FFCB600BEF574 /* MatchCell.swift */; };
 		47BB529C22A008E800BEF574 /* MatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BB529B22A008E800BEF574 /* MatchVC.swift */; };
 		47FE4F4A22A1D0D60069C04B /* CompCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE4F4922A1D0D60069C04B /* CompCell.swift */; };
@@ -48,12 +56,21 @@
 		471D67B0229EC0AC006CA528 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		471D67B2229ED278006CA528 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		471D67B8229ED37F006CA528 /* Competition.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Competition.xcdatamodel; sourceTree = "<group>"; };
+		4743D562236DBADB00EB1F2B /* MatchDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
+		4743D564236DC31C00EB1F2B /* FormationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationCell.swift; sourceTree = "<group>"; };
+		474649F32374BDBD005457BF /* StatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCell.swift; sourceTree = "<group>"; };
+		474649F52374BDD8005457BF /* EventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCell.swift; sourceTree = "<group>"; };
+		474649F72374C364005457BF /* TeamEventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEventsCell.swift; sourceTree = "<group>"; };
+		4754D7B92337EC32004E9B56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4762B74523C4BFE1004091F0 /* Football Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Football Pro.entitlements"; sourceTree = "<group>"; };
 		4764B64522A299A100F35F74 /* TeamDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailVC.swift; sourceTree = "<group>"; };
 		4764B64722A2B31200F35F74 /* ScorerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorerCell.swift; sourceTree = "<group>"; };
 		4764B64922A2BB2300F35F74 /* SquadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadVC.swift; sourceTree = "<group>"; };
 		4764B64B22A2BDF800F35F74 /* SquadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadCell.swift; sourceTree = "<group>"; };
 		4764B64D22A2C62A00F35F74 /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 		478419DC229F28D2000FE84C /* LiveMatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchCell.swift; sourceTree = "<group>"; };
+		47ADD57C23774B6400B597A3 /* FormationPlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationPlayerCell.swift; sourceTree = "<group>"; };
+		47ADD57E23774C9E00B597A3 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		47BB5299229FFCB600BEF574 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		47BB529B22A008E800BEF574 /* MatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVC.swift; sourceTree = "<group>"; };
 		47FE4F4922A1D0D60069C04B /* CompCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompCell.swift; sourceTree = "<group>"; };
@@ -112,12 +129,13 @@
 		471D6797229E9351006CA528 /* Football Pro */ = {
 			isa = PBXGroup;
 			children = (
+				4762B74523C4BFE1004091F0 /* Football Pro.entitlements */,
+				471D67B6229ED34E006CA528 /* Model */,
+				471D67B5229ED344006CA528 /* View */,
 				471D67B4229ED32F006CA528 /* Controller */,
 				471D679F229E9352006CA528 /* Assets.xcassets */,
 				471D67A1229E9352006CA528 /* LaunchScreen.storyboard */,
 				471D67A4229E9352006CA528 /* Info.plist */,
-				471D67B5229ED344006CA528 /* View */,
-				471D67B6229ED34E006CA528 /* Model */,
 			);
 			path = "Football Pro";
 			sourceTree = "<group>";
@@ -132,6 +150,7 @@
 				4764B64522A299A100F35F74 /* TeamDetailVC.swift */,
 				4764B64922A2BB2300F35F74 /* SquadVC.swift */,
 				4764B64D22A2C62A00F35F74 /* PlayerVC.swift */,
+				4743D562236DBADB00EB1F2B /* MatchDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +168,12 @@
 				47FE4F4922A1D0D60069C04B /* CompCell.swift */,
 				4764B64722A2B31200F35F74 /* ScorerCell.swift */,
 				4764B64B22A2BDF800F35F74 /* SquadCell.swift */,
+				4743D564236DC31C00EB1F2B /* FormationCell.swift */,
+				474649F32374BDBD005457BF /* StatsCell.swift */,
+				474649F52374BDD8005457BF /* EventsCell.swift */,
+				474649F72374C364005457BF /* TeamEventsCell.swift */,
+				47ADD57C23774B6400B597A3 /* FormationPlayerCell.swift */,
+				47ADD57E23774C9E00B597A3 /* HeaderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +184,7 @@
 				471D67B0229EC0AC006CA528 /* DataService.swift */,
 				471D67B2229ED278006CA528 /* Match.swift */,
 				471D67B7229ED37F006CA528 /* Competition.xcdatamodeld */,
+				4754D7B92337EC32004E9B56 /* Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,15 +266,23 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Football Pro/Pods-Football Pro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageSVGCoder/SDWebImageSVGCoder.framework",
+				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageSVGCoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSVG.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,23 +318,31 @@
 				4764B64622A299A100F35F74 /* TeamDetailVC.swift in Sources */,
 				478419DD229F28D2000FE84C /* LiveMatchCell.swift in Sources */,
 				471D67AB229EA65F006CA528 /* TabBar.swift in Sources */,
+				474649F62374BDD8005457BF /* EventsCell.swift in Sources */,
 				4764B64A22A2BB2300F35F74 /* SquadVC.swift in Sources */,
 				47FE4F4C22A1D37F0069C04B /* CompVC.swift in Sources */,
 				47BB529C22A008E800BEF574 /* MatchVC.swift in Sources */,
 				471D679B229E9351006CA528 /* HomeVC.swift in Sources */,
+				4743D563236DBADB00EB1F2B /* MatchDetailsVC.swift in Sources */,
 				471D67AF229EBB8A006CA528 /* TabCell.swift in Sources */,
+				474649F42374BDBD005457BF /* StatsCell.swift in Sources */,
 				471D67B9229ED37F006CA528 /* Competition.xcdatamodeld in Sources */,
 				47BB529A229FFCB600BEF574 /* MatchCell.swift in Sources */,
 				471D67B1229EC0AC006CA528 /* DataService.swift in Sources */,
 				4764B64C22A2BDF800F35F74 /* SquadCell.swift in Sources */,
 				47FE4F4A22A1D0D60069C04B /* CompCell.swift in Sources */,
+				47ADD57D23774B6400B597A3 /* FormationPlayerCell.swift in Sources */,
+				4754D7BA2337EC32004E9B56 /* Extensions.swift in Sources */,
 				471D67AD229EA7E4006CA528 /* HomeCell.swift in Sources */,
 				471D6799229E9351006CA528 /* AppDelegate.swift in Sources */,
+				47ADD57F23774C9E00B597A3 /* HeaderCell.swift in Sources */,
 				471D67B3229ED278006CA528 /* Match.swift in Sources */,
 				4764B64822A2B31300F35F74 /* ScorerCell.swift in Sources */,
 				4707E24222A1501E0055A658 /* CalendarCell.swift in Sources */,
 				4707E24022A14F7C0055A658 /* CalendarBar.swift in Sources */,
 				4764B64E22A2C62A00F35F74 /* PlayerVC.swift in Sources */,
+				4743D565236DC31C00EB1F2B /* FormationCell.swift in Sources */,
+				474649F82374C364005457BF /* TeamEventsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,15 +481,21 @@
 			baseConfigurationReference = 21FF32BF25EE35F5015FF26F /* Pods-Football Pro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Football Pro/Football Pro.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQLDC32ZJ8;
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = S4F5694RS5;
 				INFOPLIST_FILE = "Football Pro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bahie.Football-Pro";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bahie.Footballista-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,15 +506,21 @@
 			baseConfigurationReference = 4D05DD80D52B5F4DB049E61F /* Pods-Football Pro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Football Pro/Football Pro.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQLDC32ZJ8;
+				CURRENT_PROJECT_VERSION = 1;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = S4F5694RS5;
 				INFOPLIST_FILE = "Football Pro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bahie.Football-Pro";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bahie.Footballista-Pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

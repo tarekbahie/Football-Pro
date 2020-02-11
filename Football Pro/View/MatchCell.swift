@@ -11,94 +11,131 @@ class MatchCell : UICollectionViewCell {
     let matchDate : UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 18)
-        lbl.textColor = #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1)
+        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.setupBasicAttributes()
         return lbl
     }()
     let vsLbl : UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.textColor = #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1)
+        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.setupBasicAttributes()
+        lbl.text = "VS"
+        return lbl
+    }()
+    let ftLbl : UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.setupBasicAttributes()
+        lbl.text = "FT"
         return lbl
     }()
     let teamOneLbl : UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.textColor = #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1)
-        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.setupBasicAttributes()
         return lbl
     }()
     let teamTwoLbl : UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.textColor = #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1)
-        lbl.numberOfLines = 0
+        lbl.font = UIFont.systemFont(ofSize: 14)
+        lbl.setupBasicAttributes()
         return lbl
     }()
     let CompName : UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 18)
-        lbl.textColor = #colorLiteral(red: 0.9529411765, green: 0.2078431373, blue: 0.2078431373, alpha: 1)
+        lbl.font = UIFont.boldSystemFont(ofSize: 17)
+        lbl.setupBasicAttributes()
+        return lbl
+    }()
+    let homeTeamScore:UILabel={
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.setupBasicAttributes()
+        return lbl
+    }()
+    let awayTeamScore:UILabel={
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.setupBasicAttributes()
         return lbl
     }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setupGradientLayer()
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    fileprivate func setupStackConstraints(_ stack: UIStackView) {
+        addSubview(stack)
+        stack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        stack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        stack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
+        stack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
     
     func setupViews() {
-        addSubview(matchDate)
-        addSubview(teamOneLbl)
-        addSubview(vsLbl)
-        addSubview(teamTwoLbl)
-        addSubview(CompName)
-        
-        teamOneLbl.topAnchor.constraint(equalTo: topAnchor,constant: 10).isActive = true
-        teamOneLbl.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 40).isActive = true
-        teamOneLbl.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        teamOneLbl.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        vsLbl.topAnchor.constraint(equalTo: teamOneLbl.topAnchor).isActive = true
-        vsLbl.leadingAnchor.constraint(equalTo: teamOneLbl.trailingAnchor, constant: 10).isActive = true
-        vsLbl.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        vsLbl.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        teamTwoLbl.topAnchor.constraint(equalTo: vsLbl.topAnchor).isActive = true
-        teamTwoLbl.leadingAnchor.constraint(equalTo: vsLbl.trailingAnchor,constant: 10).isActive = true
-        teamTwoLbl.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        teamTwoLbl.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        matchDate.topAnchor.constraint(equalTo: vsLbl.bottomAnchor,constant : 20).isActive = true
-        matchDate.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        matchDate.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        matchDate.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
-        CompName.topAnchor.constraint(equalTo: matchDate.bottomAnchor,constant : 20).isActive = true
-        CompName.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        CompName.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        CompName.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        let stack1 = UIStackView(arrangedSubviews: [teamOneLbl,vsLbl,teamTwoLbl])
+        stack1.axis = .horizontal
+        stack1.distribution = .equalSpacing
+        let stack2 = UIStackView(arrangedSubviews: [homeTeamScore,ftLbl,awayTeamScore])
+        stack2.axis = .horizontal
+        stack2.distribution = .equalSpacing
+        let stack = UIStackView(arrangedSubviews: [stack1,stack2,matchDate,CompName])
+        stack.axis = .vertical
+        stack.distribution = .equalCentering
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        setupStackConstraints(stack)
+        teamOneLbl.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        teamTwoLbl.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
-    func configureCell(match : Match,compName : String){
-        self.teamOneLbl.text = match.homeName
-        self.teamTwoLbl.text = match.awayName
-        self.CompName.text = compName
+    fileprivate func setupCellFont(_ fSize: CGFloat) {
+        matchDate.font = UIFont.systemFont(ofSize: fSize)
+        vsLbl.font = UIFont.systemFont(ofSize: fSize)
+        teamOneLbl.font = UIFont.systemFont(ofSize: fSize)
+        teamTwoLbl.font = UIFont.systemFont(ofSize: fSize)
+        CompName.font = UIFont.systemFont(ofSize: fSize)
+        homeTeamScore.font = UIFont.systemFont(ofSize: fSize)
+        awayTeamScore.font = UIFont.systemFont(ofSize: fSize)
+        ftLbl.font = UIFont.systemFont(ofSize: fSize)
+        teamOneLbl.adjustsFontSizeToFitWidth = true
+        teamTwoLbl.adjustsFontSizeToFitWidth = true
+    }
+    
+    fileprivate func setupDate(_ match: Match) {
         let finalDate1 = match.date
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, YYYY (hh:mm)"
+        dateFormatter.dateFormat = "hh:mm"
         let fD1 = dateFormatter.string(from: finalDate1)
-        self.matchDate.text = fD1
+        if match.status == "FINISHED"{
+            self.matchDate.text = "Finished"
+            homeTeamScore.text = match.hScore
+            awayTeamScore.text = match.aScore
+        }else{
+            self.matchDate.text = fD1
+            homeTeamScore.text = nil
+            awayTeamScore.text = nil
+            ftLbl.text = nil
+        }
+    }
+    
+    fileprivate func setupCellTxt(_ match: Match) {
+        self.teamOneLbl.text = match.homeName
+        self.teamTwoLbl.text = match.awayName
+        self.CompName.text = match.compName
+    }
+    
+    func configureCell(match : Match,fSize:CGFloat){
+        setupCellFont(fSize)
+        setupCellTxt(match)
+        setupDate(match)
     }
 }
